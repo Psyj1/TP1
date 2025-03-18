@@ -23,11 +23,11 @@ public class Passagem {
         this.numpoltrona = numpoltrona;
     }
 
-    public String getNome() {
+    public String getNomePassageiro() {
         return nomePassageiro;
     }
 
-    public void setNome(String nome) {
+    public void setNomePassageiro(String nomePassageiro) {
         this.nomePassageiro = nomePassageiro;
     }
 
@@ -42,60 +42,73 @@ public class Passagem {
     public String getRG() {
         return RG;
     }
-    
-    public void setRG(){
+
+    public void setRG(String RG) {
         this.RG = RG;
     }
 
-    public void setlocalViagem(String localViagem) {
+    public String getLocalViagem() {
+        return localViagem;
+    }
+
+    public void setLocalViagem(String localViagem) {
         this.localViagem = localViagem;
     }
 
-    public String data() {
+    public String getData() {
         return data;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setData(String data) {
+        this.data = data;
     }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getNumpoltrona() {
+        return numpoltrona;
+    }
+
+    public void setNumpoltrona(String numpoltrona) {
+        this.numpoltrona = numpoltrona;
+    }
+
     
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
       
-    public void cadastrarDados(String nome, String telefone, String endereco, String cidade){
-        this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.cidade = cidade;
+    public void cadastrarDadosPassageiros(String nomePassageiro, String RG, String telefone){
+        setNomePassageiro (nomePassageiro);
+        setRG (RG);
+        setTelefone(telefone);
     }
     
-    public void mostrarDados(){
+    
+    
+    public void mostrarDadosPassageiros(){
         System.out.println("Dados do Contato"
-                + "\nNome: " + this.nome
-                + "\nTelefone: " + this.telefone
-                + "\nEndereco: " + this.endereco
-                + "\nCidade: " + this.cidade);
+                + "\nNome: " + getNomePassageiro()
+                + "\nTelefone: " + getTelefone()
+                + "\nRG: " + getRG());
+    }
+    
+    public void cadastrarDadosPassagem(String localViagem, String data, String horario, String numpoltrona){
+       setData(data);
+       setHorario(horario);
+       setLocalViagem(localViagem);
+       setNumpoltrona(numpoltrona);
+    }
+    
+    public void mostrarDadosPassagem(){
+        System.out.println("Dados da Viagem"
+                + "\nCidade: " + getLocalViagem()
+                + "\nData: " + getData()
+                + "\nHorario: " + getHorario()
+                + "\nPoltrona: " + getNumpoltrona());
     }
     
 }

@@ -1,19 +1,32 @@
 
 package passagem;
 
+import java.util.Scanner;
+
 
 public class Passagem2 {
     
     public static void main (String[] args){
-        Passagem passagem1 = new Passagem();
+              //Instanciando a classe Passagem
+        Passagem passagem = new Passagem();
         
-        passagem1.cadastrarDadosPassageiros("André", "14318461368", "123456789");
-        passagem1.mostrarDadosPassageiros();
+        //Instanciando a classe Scanner
+        Scanner keyboard = new Scanner(System.in);
         
-        passagem1.cadastrarDadosPassagem("Ushuaia", "32/01/2050", "21:10", "56");
-        passagem1.mostrarDadosPassagem();
+        //Pegando as informações do usuário
+        System.out.println("Nome do passageiro: ");
+        String nome = keyboard.next();
+        System.out.println("RG do passageiro: ");
+        String RG = keyboard.next();
+        System.out.println("Telefone do passageiro: ");
+        String telefone = keyboard.next();
         
+        //Chamando o método cadastrarDadosPassageiro
+        passagem.cadastrarDadosPassageiros(nome, RG, telefone);
+       
+        //Mostrando dados do Passageiro
+        passagem.mostrarDadosPassageiros();
         
-        System.out.println(passagem1);
+        keyboard.close();
     }
 }
